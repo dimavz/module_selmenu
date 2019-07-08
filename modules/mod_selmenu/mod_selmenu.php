@@ -3,7 +3,7 @@ defined('_JEXEC') or die;
 
 JLoader::register('ModSelMenuHelper', __DIR__ . '/helper.php');
 
-$listMenuLinks = ModSelMenuHelper::getList($params);
+$listLinks = ModSelMenuHelper::getList($params);
 
 $layout = $params->get('layout','default');
 
