@@ -9,12 +9,11 @@ class ModSelMenuHelper
 //        echo "<pre>";
 //        print_r($params);
 //        echo "</pre>";
-////        exit();
+//        exit();
         $listSelItems = $params->get('treemenuitems');
 
         JLoader::register('MenusHelper', JPATH_ADMINISTRATOR . '/components/com_menus/helpers/menus.php');
         $menuTypes = MenusHelper::getMenuLinks();
-
         $menu = JFactory::getApplication()->getMenu('site');
         $items = $menu->getMenu();
 
