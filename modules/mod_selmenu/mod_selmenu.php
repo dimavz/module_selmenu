@@ -12,3 +12,5 @@ $listLinks = ModSelMenuHelper::getList($params);
 $layout = $params->get('layout','default');
 
 require JModuleHelper::getLayoutPath('mod_selmenu',$layout);
+
+
