@@ -45,7 +45,18 @@ class ModSelMenuHelper
                         }
                     }
                     if (in_array($link_item->value,$listSelItems)){
-                        $link_item->selected = 1;
+                        if(!empty($excluded)){
+                            if (in_array($link_item->value,$excluded)){
+                                $link_item->selected = 0;
+                            }
+                            else{
+                                $link_item->selected = 1;
+                            }
+                        }
+                        else{
+                            $link_item->selected = 1;
+                        }
+
                     }
                     else{
                         $link_item->selected = 0;
