@@ -30,11 +30,6 @@
 				<field name="excluded_ids" type="textarea" label="MOD_SELMENU_EXCLUDED_LABEL" description=""
 					   rows="5"
 					   cols="5" />
-				<field name="inverttreevalue" type="list" default="" required="true" label="MOD_SELMENU_LABEL_INVERT"
-					   description="MOD_SELMENU_DESCRIPTION_INVERT">
-					<option value="1">MOD_SELMENU_SELECTED_MENUITEMS</option>
-					<option value="-1">MOD_SELMENU_NOSELECTED_MENUITEMS</option>
-				</field>
 				<field name="treemenuitems" 
 					type="treemenuitems" 
 					required="true" 

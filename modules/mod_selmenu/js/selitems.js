@@ -179,7 +179,8 @@ jQuery(function ($) {
             // console.log(id);
             // console.log(listItemsLevel3);
         });
-        
+
+        //Действия при клике на кнопке Перейти по ссылке
         $('#button_selmenu_'+mod_id).click(function () {
             // console.log('Тест кнопки');
             var link = $('#selmenu_'+ mod_id+'_level_3 option:selected').attr('link');

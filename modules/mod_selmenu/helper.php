@@ -10,7 +10,17 @@ class ModSelMenuHelper
 //        print_r($params);
 //        echo "</pre>";
 //        exit();
+        $ids_excl = $params->get('excluded_ids');
+        $excluded = array();
+        if(!empty($ids_excl)){
+            $excluded = explode(',',$ids_excl);
+        }
         $listSelItems = $params->get('treemenuitems');
+
+//        echo "<pre>";
+//        print_r($excluded);
+//        echo "</pre>";
+//        exit();
 
         JLoader::register('MenusHelper', JPATH_ADMINISTRATOR . '/components/com_menus/helpers/menus.php');
         $menuTypes = MenusHelper::getMenuLinks();
