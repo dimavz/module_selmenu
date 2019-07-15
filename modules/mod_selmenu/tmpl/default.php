@@ -2,6 +2,8 @@
 
 defined('_JEXEC') or die;
 JHtml::_('bootstrap.tooltip');
+JText::script("MOD_SELMENU_SELECTOR");
+
 
 //echo "<pre>";
 ////print_r($listLinks);

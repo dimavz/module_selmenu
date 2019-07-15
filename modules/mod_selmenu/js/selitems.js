@@ -19,10 +19,10 @@ jQuery(function ($) {
             if (!Number(selmenu_id)){
                 $('#selmenu_' + mod_id + '_level_2').empty();
                 $('#selmenu_' + mod_id + '_level_2').attr('disabled','disabled');
-                $('#selmenu_' + mod_id + '_level_2').append('<option>Выберите пункт меню</option>');
+                $('#selmenu_' + mod_id + '_level_2').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
                 $('#selmenu_' + mod_id + '_level_3').empty();
                 $('#selmenu_' + mod_id + '_level_3').attr('disabled','disabled');
-                $('#selmenu_' + mod_id + '_level_3').append('<option>Выберите пункт меню</option>');
+                $('#selmenu_' + mod_id + '_level_3').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
             }
 
             var listItemsLevel2 = [];
@@ -100,7 +100,7 @@ jQuery(function ($) {
                 $('#selmenu_' + mod_id + '_level_2').empty();
                 //Если пунктов больше 1
                 if(viewListItemsLevel2.length >1){
-                    $('#selmenu_' + mod_id + '_level_2').append('<option>Выберите пункт меню</option>');
+                    $('#selmenu_' + mod_id + '_level_2').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
                 }
                 $.each(viewListItemsLevel2, function (ind2, item2) {
                     $('#selmenu_' + mod_id + '_level_2').append('<option data-menuid ='+ item2.menu_id +' value='+ item2.value +' link="'+item2.link+'">'+ item2.text +'</option>');
@@ -126,13 +126,13 @@ jQuery(function ($) {
                     else{
                         $('#selmenu_' + mod_id + '_level_3').empty();
                         $('#selmenu_' + mod_id + '_level_3').attr('disabled','disabled');
-                        $('#selmenu_' + mod_id + '_level_3').append('<option>Выберите пункт меню</option>');
+                        $('#selmenu_' + mod_id + '_level_3').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
                     }
                 }
                 else{ // Если список 3-го уровня пуст
                     $('#selmenu_' + mod_id + '_level_3').empty();
                     $('#selmenu_' + mod_id + '_level_3').attr('disabled','disabled');
-                    $('#selmenu_' + mod_id + '_level_3').append('<option>Выберите пункт меню</option>');
+                    $('#selmenu_' + mod_id + '_level_3').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
                 }
             }
         });
@@ -144,7 +144,7 @@ jQuery(function ($) {
             if (!Number(id)){
                 $('#selmenu_' + mod_id + '_level_3').empty();
                 $('#selmenu_' + mod_id + '_level_3').attr('disabled','disabled');
-                $('#selmenu_' + mod_id + '_level_3').append('<option>Выберите пункт меню</option>');
+                $('#selmenu_' + mod_id + '_level_3').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
             }
 
             var listItemsLevel3 = [];
@@ -164,7 +164,7 @@ jQuery(function ($) {
             if(listItemsLevel3.length){
                 $('#selmenu_' + mod_id + '_level_3').empty();
                 if(listItemsLevel3.length > 1){
-                    $('#selmenu_' + mod_id + '_level_3').append('<option>Выберите пункт меню</option>');
+                    $('#selmenu_' + mod_id + '_level_3').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
                 }
                 $('#selmenu_' + mod_id + '_level_3').removeAttr("disabled");
                 $.each(listItemsLevel3, function (ind, item3) {
@@ -174,7 +174,7 @@ jQuery(function ($) {
             else{ //Список пуст
                 $('#selmenu_' + mod_id + '_level_3').empty();
                 $('#selmenu_' + mod_id + '_level_3').attr('disabled','disabled');
-                $('#selmenu_' + mod_id + '_level_3').append('<option>Выберите пункт меню</option>');
+                $('#selmenu_' + mod_id + '_level_3').append('<option>' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'</option>');
             }
             // console.log(id);
             // console.log(listItemsLevel3);
@@ -183,20 +183,24 @@ jQuery(function ($) {
         //Действия при клике на кнопке Перейти по ссылке
         $('#button_selmenu_'+mod_id).click(function () {
             // console.log('Тест кнопки');
+            var fl = 1;
             var link = $('#selmenu_'+ mod_id+'_level_3 option:selected').attr('link');
             if(link === undefined || link=='' ){
                  link = $('#selmenu_'+ mod_id+'_level_2 option:selected').attr('link');
                 if(link === undefined || link==''){
                     link = $('#selmenu_'+ mod_id+'_level_1 option:selected').attr('link');
                     if(link === undefined || link==''){
-                        alert('Выберите пункт меню');
+                        alert('' + Joomla.JText._('MOD_SELMENU_SELECTOR') +'');
+                        fl = 0;
                     }
                 }
             }
             // console.log(link);
-            window.location.href=link;
+            if(fl)
+            {
+                window.location.href=link;
+            }
         });
-
     });
 
 });

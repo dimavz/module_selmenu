@@ -1,44 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="module" version="3.1" client="site" method="upgrade">
-	<name>MOD_SELMENU_NAME</name>
-	<author>Dmitry Zatulenko</author>
-	<creationDate>Jun 2019</creationDate>
-	<copyright>Copyright (C) 2019 Open Source Matters. All rights reserved.</copyright>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<authorEmail>admin@joomla.org</authorEmail>
-	<authorUrl></authorUrl>
-	<version>1.0.0</version>
-	<description>MOD_SELMENU_XML_DESCRIPTION</description>
-	<files>
-		<filename module="mod_selmenu">mod_selmenu.php</filename>
-		<folder>css</folder>
-		<folder>fields</folder>
-		<folder>js</folder>
-		<folder>language</folder>
-		<folder>layouts</folder>
-		<folder>tmpl</folder>
-		<filename>helper.php</filename>
-		<filename>mod_selmenu.php</filename>
-	</files>
-	<languages>
-		<language tag="ru-RU">language/ru-RU/ru-RU.mod_selmenu.ini</language>
-		<language tag="ru-RU">language/ru-RU/ru-RU.mod_selmenu.sys.ini</language>
-	</languages>
-	<config>
-		<fields name="params">
-			<fieldset name="basic">
-				<field name="excluded_ids" type="textarea" label="MOD_SELMENU_EXCLUDED_LABEL" description=""
-					   rows="5"
-					   cols="5" />
-				<field name="treemenuitems" 
-					type="treemenuitems" 
-					required="true" 
-					label="MOD_SELMENU_LABEL"
-					description="MOD_SELMENU_DESCRIPTION"
-					addfieldpath="modules/mod_selmenu/fields"
-				/>
+    <name>MOD_SELMENU_NAME</name>
+    <author>Dmitry Zatulenko</author>
+    <creationDate>Jun 2019</creationDate>
+    <copyright>Copyright (C) 2019 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@joomla.org</authorEmail>
+    <authorUrl></authorUrl>
+    <version>1.0.0</version>
+    <description>MOD_SELMENU_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_selmenu">mod_selmenu.php</filename>
+        <folder>css</folder>
+        <folder>fields</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+        <folder>layouts</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename>mod_selmenu.php</filename>
+    </files>
+    <languages>
+        <language tag="ru-RU">language/ru-RU/ru-RU.mod_selmenu.ini</language>
+        <language tag="ru-RU">language/ru-RU/ru-RU.mod_selmenu.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="treemenuitems"
+                        type="treemenuitems"
+                        required="true"
+                        label="MOD_SELMENU_LABEL"
+                        description="MOD_SELMENU_DESCRIPTION"
+                        addfieldpath="modules/mod_selmenu/fields"
+                />
+                <field
+                        name="excluded_ids"
+                        type="textarea"
+                        label="MOD_SELMENU_EXCLUDED_LABEL"
+                        description="MOD_SELMENU_EXCLUDED_DESC"
+                        rows="5"
+                        cols="5"/>
 
-			</fieldset>
-		</fields>
-	</config>
+            </fieldset>
+        </fields>
+    </config>
 </extension>
