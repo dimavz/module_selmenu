@@ -27,13 +27,13 @@ JText::script("MOD_SELMENU_SELECTOR");
         <div class="span3">
             <?php if ($key == 'level_1'): ?>
             <select id="<?php echo $module->name . '_' . $module->id . '_' . $key ?>" name="<?php echo $key ?>">
-                <option>Выберите пункт меню</option>
+                <option><?php echo JText::_('MOD_SELMENU_SELECTOR'); ?></option>
                 <?php else: ?>
 
                 <select disabled="disabled" id="<?php echo $module->name . '_' . $module->id . '_' . $key ?>"
                         name="<?php
                         echo $key ?>">
-                    <option>Выберите пункт меню</option>
+                    <option><?php echo JText::_('MOD_SELMENU_SELECTOR'); ?></option>
                     <?php endif; ?>
                     <?php foreach ($item as $i) : ?>
                         <?php
@@ -61,7 +61,7 @@ JText::script("MOD_SELMENU_SELECTOR");
         <button class="btn btn-info" id="button_<?php echo $module->name . '_' . $module->id ?>"
                 data-id="<?php echo
                 $module->id
-                ?>">Перейти
+                ?>"><?php echo JText::_('MOD_SELMENU_BUTTON'); ?>
         </button>
     </div>
 </div>
